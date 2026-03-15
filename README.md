@@ -13,7 +13,6 @@ Feel free to use any here available notes and setups on your own server!
 Note: I´m currently not using all of the here published apps and services, so always check compatibility before cloning anything.
 
 <br>
-<br>
 
 # 🏁 Goals
 
@@ -58,7 +57,6 @@ I think I speak for all IT-Guys when I say that, for most people, a homelab or a
   * [ ] Integrating every service with SSO
 
 <br>
-<br>
 
 # 🖥️ My current setup:
 
@@ -71,9 +69,13 @@ I´m currently running most of the here published apps and services in a VM with
 | ------------------ | ------------------- | ----------- | --------------------------- | --------- | ------- |
 | Proxmox VE       | AMD Ryzen 7 5700x | 32GB DDR4 | Gigabyte B550 Gaming X V2 | 1x256GB | 1x4TB |
 
+<br>
+
 ### Specs of the VM running docker
 
 
 | Operating-System  | CPU/Cores | RAM   | SSDs | HDDs  |
 | ------------------- | ----------- | ------- | :----- | ------- |
 | Xubuntu (minimal) | 6 cores   | 8 GiB | 40GB | 250GB |
+
+---
