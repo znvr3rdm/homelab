@@ -1,0 +1,56 @@
+# Optional, you can create external networks with "docker network create <network_name>. By using external networks you can increase security"
+networks:
+  external:
+    external: true
+  proxy:
+    external: true
+
+
+services:
+
+
+  # NPM (nginx-proxy-manager is an easy reverse-proxy with an integrated web-gui)
+  npm:
+    # You can use the version-tag "latest" or a specific version
+    image: jc21/nginx-proxy-manager:latest
+    container_name: npm # Optional
+    volumes:
+      - ${PATH_TO_DATA}:/data
+      - ${PATH_TO_CERTS}:/etc/letsencrypt
+
+    # Set this to your location
+    environment:
+      - TZ=Europe/Berlin 
+
+    # Not needed if you use a cloudlfare tunnel and the docker-DNS 
+    # ports: 
+    #   - 80:80   # Default http-port
+    #   - 443:443   # Default https-port
+    #   - 81:81   # Default port for the admin-panel
+
+    # Always restarts the service, unless you stopped it 
+    restart: unless-stopped   
+
+    # Optional, again: can increase security but not needed. By not defining networks, docker will create a default-network for the entire docker-compose-file. 
+    networks:
+      - external
+      - proxy
+
+
+
+  # Cloudflared is the official docker image by cloudlfare to create cloudflare-tunnels 
+  cloudflared:
+    # You can use the version-tag "latest" or a specific version
+    image: cloudflare/cloudflared:latest
+    container_name: cloudflared # Optional
+
+    # Options how the container will start. The flag "--protocol quic" is optional. 
+    command: tunnel --no-autoupdate run --protocol quic --token ${CLOUDLFARED_TOKEN}
+
+    # Always restarts the service, unless you stopped it 
+    restart: unless-stopped   
+
+    # Optional, again: can increase security but not needed. By not defining networks, docker will create a default-network for the entire docker-compose-file. 
+    networks:
+      - external
+
