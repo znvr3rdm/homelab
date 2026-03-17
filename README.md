@@ -9,7 +9,7 @@ This **repository** contains notes, setups and configurations for my application
 > ⚠️ Be aware, that I´m still learning and there might be mistakes in some files. I do my best to minimize mistakes and update the repo if needed.
 > However, if you do spot a mistake, please report it to me. Thanks!
 
-Feel free to use any here available notes and setups on your own server!
+Feel free to use any here available notes and setups on your own server!  
 Note: I´m currently not using all of the here published apps and services, so always check compatibility before cloning anything.
 
 <br>
