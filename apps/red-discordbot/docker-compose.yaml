@@ -1,0 +1,17 @@
+
+services:
+  redbot:
+    container_name: redbot
+    image: phasecorex/red-discordbot:latest
+    volumes:
+      - ${PATH_TO_DATA}:/data
+    environment:
+      - TOKEN=${BOT_TOKEN}
+      - PREFIX=.
+      - TZ=Europe/Berlin
+      - PUID=1000
+    restart: unless-stopped
+
+    
+
+
