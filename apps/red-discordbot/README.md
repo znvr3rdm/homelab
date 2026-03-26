@@ -10,6 +10,7 @@ Redbot uses it's own plugins, which are called "cogs". They add functions and ab
 
 - To be able to follow my instructions here you need the docker engine and docker compose installed. You can use the official guide for this: https://docs.docker.com/compose/install/
 <br>
+
 > You can check if the install was successfull with this command:  
 > ```
 > docker version && docker compose version
@@ -113,6 +114,8 @@ After you did all that you have yourself a fully working discord bot. If you wan
 <br>
 
 ## Credits 
-> You can find the original documentation in this github-repo: https://github.com/PhasecoreX/docker-red-discordbot or on the website: https://docs.discord.red/en/stable/
+Check out the original documentation: 
+- https://github.com/PhasecoreX/docker-red-discordbot
+- https://docs.discord.red/en/stable/
 
 
