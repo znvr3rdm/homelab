@@ -14,6 +14,21 @@ _Note: I´m currently not using all of the here published apps and services, so 
 
 <br>
 
+# Content
+
+
+### 1. [Introduction](#my-homelab)
+### 2. [Structure in this repo](#structure-of-this-repository)
+### 3. [My goals](#-goals)
+### 5. [The current setup](#️-my-current-setup)
+### 6. [Licensing](#-license)
+
+<br>
+
+_If you're looking for the **services** and their documentation, you can find those in the [**apps folder**](./apps/)_
+
+<br>
+
 # 🏁 Goals
 
 ### Why go through this?
@@ -28,6 +43,14 @@ I think I speak for all IT-Guys when I say that, for most people, a homelab or a
 - and of course to have fun!
 
 _**More concrete goals of apps and services I want to host are located in the issues/milestones tab**_
+
+<br>
+
+# Currently added services and their documentation 
+
+- [Redbot](./apps/red-discordbot/)
+- [Cloudflared](./apps/npm_cloudlfared_stack/) (README missing)
+- [Nginx proxy manager](./apps/npm_cloudlfared_stack/) (README missing)
 
 <br>
 
