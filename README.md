@@ -18,10 +18,10 @@ _Note: I´m currently not using all of the here published apps and services, so 
 
 
 ### 1. [Introduction](#my-homelab)
-### 2. [Structure in this repo](#structure-of-this-repository)
-### 3. [My goals](#-goals)
-### 5. [The current setup](#️-my-current-setup)
-### 6. [Licensing](#-license)
+### 2. [My goals](#-goals)
+### 3. [Current services](#currently-added-services-and-their-documentation)
+### 4. [The current setup](#️-my-current-setup)
+### 5. [Licensing](#-license)
 
 <br>
 
@@ -33,7 +33,7 @@ _If you're looking for the **services** and their documentation, you can find th
 
 ### Why go through this?
 
-I think I speak for all IT-Guys when I say that, for most people, a homelab or an own server is absolute overkill. But if you're like me, interested in tech and looking for a way to provide maximum security with no monthly sbscriptions, a homelab can fix exactly those problems.
+I think I speak for all IT-Guys when I say that, for most people, a homelab or an own server is absolute overkill. But if you're like me, interested in tech and looking for a way to provide maximum security with no monthly subscriptions, a homelab can fix exactly those problems.
 
 **Therefore my primary goals with this setup are:**
 
