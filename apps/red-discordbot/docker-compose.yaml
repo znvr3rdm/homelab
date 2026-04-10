@@ -26,8 +26,8 @@ services:
       # The user the docker "use". Normally "PUID=1000" is your default user. 
       - PUID=1000
     
-    # The service will always try to restart, except you stopped manually 
-    restart: unless-stopped
+    # The service will never try to restart. You can use "unless-stopped" if you want it to.
+    restart: never
 
 
 
