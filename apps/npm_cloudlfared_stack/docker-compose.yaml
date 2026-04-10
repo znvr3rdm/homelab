@@ -29,7 +29,7 @@ services:
     #   - 81:81   # Default port for the admin-panel
 
     # Never restarts the service. Use "unless-stopped" if you want it to. 
-    restart: never   
+    restart: no   
 
     # Optional, again: can increase security but not needed. By not defining networks, docker will create a default-network for the entire docker-compose-file. 
     networks:
@@ -48,7 +48,7 @@ services:
     command: tunnel --no-autoupdate run --protocol quic --token ${CLOUDLFARED_TOKEN}
 
     # Never restarts the service. Use "unless-stopped" if you want it to. 
-    restart: never   
+    restart: no   
 
     # Optional, again: can increase security but not needed. By not defining networks, docker will create a default-network for the entire docker-compose-file. 
     networks:
