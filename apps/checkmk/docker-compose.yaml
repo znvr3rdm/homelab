@@ -1,0 +1,15 @@
+services:
+  checkmk:
+    image: checkmk/check-mk-pro:2.5.0-latest
+    container_name: checkmk
+    environment:
+      - CMK_PASSWORD=${PASSWORD}
+      - TZ=Europe/Berlin
+    volumes:
+      - ${PATH_TO_SITES}:/omd/sites
+    tmpfs:
+      - /opt/omd/sites/cmk/tmp:uid=1000,gid=1000
+    ports:
+      - 8080:5000
+      - 8000:8000
+    restart: no
