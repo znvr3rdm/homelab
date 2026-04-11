@@ -1,15 +1,17 @@
 services:
   checkmk:
-    image: checkmk/check-mk-pro:2.5.0-latest
-    container_name: checkmk
+    image: checkmk/check-mk-pro:2.5.0-latest  # This imnage will use the pro-image, which is needed for the free/trial-license 
+    container_name: checkmk   # Customize the name to your needs.
     environment:
-      - CMK_PASSWORD=${PASSWORD}
-      - TZ=Europe/Berlin
+      - CMK_PASSWORD=${PASSWORD}  # This will be your start-password for the automatic generated account 
+      - TZ=Europe/Berlin  # Put your timezone here
     volumes:
-      - ${PATH_TO_SITES}:/omd/sites
+      - ${PATH_TO_SITES}:/omd/sites   # Data for your monitoring services/sites will be stored there 
     tmpfs:
-      - /opt/omd/sites/cmk/tmp:uid=1000,gid=1000
+      - /opt/omd/sites/cmk/tmp:uid=1000,gid=1000  # Not necessary but recommended. This will use RAM for temporary files for faster speeds.
     ports:
-      - 8080:5000
-      - 8000:8000
-    restart: no
+      - 8080:5000   # This port is used for the web-interface 
+      - 8000:8000   # This will be used for the checkmk-agents 
+      # - 6556:6556   # Might be necessary for some options or tracking features
+      # - 161:161/udp   # Might be necessary for some options or tracking features
+    restart: unless-stopped # Will always try to restart, except you stop in manually. Use "no" if you want it to never restart. 
