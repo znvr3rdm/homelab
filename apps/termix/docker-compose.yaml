@@ -1,0 +1,22 @@
+services:
+  termix:
+    image: ghcr.io/lukegus/termix:latest
+    container_name: termix
+    restart: unless-stopped
+    ports:
+      - 9000:8080
+    volumes:
+      - ${PATH_TO_YOUR_DATA}:/app/data
+    environment:
+      PORT: '8080'
+    depends_on:
+      - guacd
+
+  guacd:
+    image: guacamole/guacd:1.6.0
+    container_name: guacd
+    restart: unless-stopped
+    ports:
+      - "4822:4822"
+
+
