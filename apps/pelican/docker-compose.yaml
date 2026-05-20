@@ -1,0 +1,52 @@
+services:
+  panel:
+    container_name: pelican_panel
+    image: ghcr.io/pelican-dev/panel:latest
+    restart: no
+    ports:
+      - "1080:80" 
+      - "1443:443"  
+
+      # Default:
+      # - "80:80"
+      # - "443:443"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    volumes: 
+      - pelican-data:/pelican-data
+      - pelican-logs:/var/www/html/storage/logs
+    environment:
+      XDG_DATA_HOME: /pelican-data
+      APP_URL: ${APP_URL}
+      ADMIN_EMAIL: ${ADMIN_EMAIL}
+      BEHIND_PROXY: "true"  # Only set to "true", if you´re using a reverse proxy like traefik, nginx, etc.
+
+  wings:
+    container_name: pelican_wings
+    image: ghcr.io/pelican-dev/wings:latest
+    restart: no
+    ports:
+      - "3264:8080"
+      - "3265:2022"
+
+      # Default:
+      # - "8080:8080"
+      # - "2022:2022"
+    tty: true
+    environment:
+      TZ: "Europe/Berlin" # Change this to your timezone
+      WINGS_UID: 988
+      WINGS_GID: 988
+      WINGS_USERNAME: pelican
+    volumes:
+      - "/var/run/docker.sock:/var/run/docker.sock"
+      - "/var/lib/docker/containers/:/var/lib/docker/containers/"
+      - "/etc/pelican/:/etc/pelican/"
+      - "/var/lib/pelican/:/var/lib/pelican/"
+      - "/var/log/pelican/:/var/log/pelican/"
+      - "/tmp/pelican/:/tmp/pelican/"
+      - "/etc/ssl/certs:/etc/ssl/certs:ro"
+
+volumes:
+  pelican-data:
+  pelican-logs:
